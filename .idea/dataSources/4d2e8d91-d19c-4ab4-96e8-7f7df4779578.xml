@@ -127,6 +127,24 @@
 |root||rdsadmin|localhost|XA_RECOVER_ADMIN|G
 |root||rds_superuser_role||grant option|G
 |root||rdsadmin|localhost|grant option|G
+hospital|schema||administrador||ALTER|G
+hospital|schema||administrador||ALTER ROUTINE|G
+hospital|schema||administrador||CREATE|G
+hospital|schema||administrador||CREATE ROUTINE|G
+hospital|schema||administrador||CREATE TEMPORARY TABLES|G
+hospital|schema||administrador||CREATE VIEW|G
+hospital|schema||administrador||DELETE|G
+hospital|schema||administrador||DROP|G
+hospital|schema||administrador||EVENT|G
+hospital|schema||administrador||EXECUTE|G
+hospital|schema||administrador||INDEX|G
+hospital|schema||administrador||INSERT|G
+hospital|schema||administrador||LOCK TABLES|G
+hospital|schema||administrador||REFERENCES|G
+hospital|schema||administrador||SELECT|G
+hospital|schema||administrador||SHOW VIEW|G
+hospital|schema||administrador||TRIGGER|G
+hospital|schema||administrador||UPDATE|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <ServerVersion>8.0.40</ServerVersion>
@@ -1031,176 +1049,302 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="288" parent="1" name="hospital">
-      <LastIntrospectionLocalTimestamp>2025-02-18.16:01:05</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-02-18.18:14:43</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="289" parent="1" name="information_schema">
+    <schema id="289" parent="1" name="hospitalPrueba2">
+      <LastIntrospectionLocalTimestamp>2025-02-18.18:15:50</LastIntrospectionLocalTimestamp>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="290" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="290" parent="1" name="mysql">
+    <schema id="291" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="291" parent="1" name="performance_schema">
+    <schema id="292" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="sys">
+    <schema id="293" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="293" parent="1" name="administrador">
+    <user id="294" parent="1" name="administrador">
       <RoleGrants>rds_superuser_role
 </RoleGrants>
     </user>
-    <user id="294" parent="1" name="mysql.infoschema">
+    <user id="295" parent="1" name="medico"/>
+    <user id="296" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="295" parent="1" name="mysql.session">
+    <user id="297" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="296" parent="1" name="mysql.sys">
+    <user id="298" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="297" parent="1" name="rds_superuser_role">
+    <user id="299" parent="1" name="rds_superuser_role">
       <CanLogin>0</CanLogin>
     </user>
-    <user id="298" parent="1" name="rdsadmin">
+    <user id="300" parent="1" name="rdsadmin">
       <Host>localhost</Host>
       <MaxUserConnections>100000</MaxUserConnections>
       <Plugin>auth_socket</Plugin>
     </user>
-    <table id="299" parent="288" name="camas">
+    <table id="301" parent="288" name="camas">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="300" parent="288" name="habitaciones">
+    <table id="302" parent="288" name="habitaciones">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="301" parent="288" name="pacientes">
+    <table id="303" parent="288" name="pacientes">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="302" parent="299" name="id">
+    <table id="304" parent="289" name="camas">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="305" parent="289" name="pacientes">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="306" parent="289" name="salas">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="307" parent="301" name="id">
       <AutoIncrement>43</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="303" parent="299" name="numero">
+    <column id="308" parent="301" name="numero">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="304" parent="299" name="estado">
+    <column id="309" parent="301" name="estado">
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="305" parent="299" name="id_habitacion">
+    <column id="310" parent="301" name="id_habitacion">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="306" parent="299" name="camas_ibfk_1">
+    <foreign-key id="311" parent="301" name="camas_ibfk_1">
       <ColNames>id_habitacion</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>habitaciones</RefTableName>
     </foreign-key>
-    <index id="307" parent="299" name="PRIMARY">
+    <index id="312" parent="301" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="308" parent="299" name="id_habitacion">
+    <index id="313" parent="301" name="id_habitacion">
       <ColNames>id_habitacion</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="309" parent="299" name="PRIMARY">
+    <key id="314" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="310" parent="300" name="id">
+    <column id="315" parent="302" name="id">
       <AutoIncrement>15</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="311" parent="300" name="nombre">
+    <column id="316" parent="302" name="nombre">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="312" parent="300" name="tipo">
+    <column id="317" parent="302" name="tipo">
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="313" parent="300" name="capacidad">
+    <column id="318" parent="302" name="capacidad">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <index id="314" parent="300" name="PRIMARY">
+    <index id="319" parent="302" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="315" parent="300" name="PRIMARY">
+    <key id="320" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="316" parent="301" name="id">
+    <column id="321" parent="303" name="id">
       <AutoIncrement>10</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="317" parent="301" name="nombre">
+    <column id="322" parent="303" name="nombre">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="318" parent="301" name="urgencia">
+    <column id="323" parent="303" name="urgencia">
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="319" parent="301" name="dni">
+    <column id="324" parent="303" name="dni">
       <Position>4</Position>
       <StoredType>varchar(15)|0s</StoredType>
     </column>
-    <column id="320" parent="301" name="id_cama">
+    <column id="325" parent="303" name="id_cama">
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="321" parent="301" name="pacientes_ibfk_1">
+    <foreign-key id="326" parent="303" name="pacientes_ibfk_1">
       <ColNames>id_cama</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>camas</RefTableName>
     </foreign-key>
-    <index id="322" parent="301" name="PRIMARY">
+    <index id="327" parent="303" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="323" parent="301" name="dni">
+    <index id="328" parent="303" name="dni">
       <ColNames>dni</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="324" parent="301" name="id_cama">
+    <index id="329" parent="303" name="id_cama">
       <ColNames>id_cama</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="325" parent="301" name="PRIMARY">
+    <key id="330" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="326" parent="301" name="dni">
+    <key id="331" parent="303" name="dni">
       <UnderlyingIndexName>dni</UnderlyingIndexName>
+    </key>
+    <column id="332" parent="304" name="id_cama">
+      <AutoIncrement>6</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="333" parent="304" name="id_sala">
+      <Position>2</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="334" parent="304" name="estado">
+      <DefaultExpression>&apos;disponible&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>enum(&apos;ocupada&apos;, &apos;disponible&apos;, &apos;en mantenimiento&apos;)|0e</StoredType>
+    </column>
+    <foreign-key id="335" parent="304" name="camas_ibfk_1">
+      <ColNames>id_sala</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id_sala</RefColNames>
+      <RefTableName>salas</RefTableName>
+    </foreign-key>
+    <index id="336" parent="304" name="PRIMARY">
+      <ColNames>id_cama</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="337" parent="304" name="id_sala">
+      <ColNames>id_sala</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="338" parent="304" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="339" parent="305" name="id_paciente">
+      <AutoIncrement>4</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="340" parent="305" name="nombre">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="341" parent="305" name="apellido">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="342" parent="305" name="fecha_nacimiento">
+      <Position>4</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <column id="343" parent="305" name="telefono">
+      <Position>5</Position>
+      <StoredType>varchar(15)|0s</StoredType>
+    </column>
+    <column id="344" parent="305" name="id_cama">
+      <Position>6</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <foreign-key id="345" parent="305" name="pacientes_ibfk_1">
+      <ColNames>id_cama</ColNames>
+      <OnDelete>set-null</OnDelete>
+      <RefColNames>id_cama</RefColNames>
+      <RefTableName>camas</RefTableName>
+    </foreign-key>
+    <index id="346" parent="305" name="PRIMARY">
+      <ColNames>id_paciente</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="347" parent="305" name="id_cama">
+      <ColNames>id_cama</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="348" parent="305" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="349" parent="306" name="id_sala">
+      <AutoIncrement>4</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="350" parent="306" name="nombre_sala">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="351" parent="306" name="descripcion">
+      <Position>3</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <index id="352" parent="306" name="PRIMARY">
+      <ColNames>id_sala</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="353" parent="306" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
