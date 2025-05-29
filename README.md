@@ -35,7 +35,7 @@ Follow these steps to install and run the HospitalFlow application locally:
 ### 1. Clone the repository
 
 ```bash
-  git clone https://github.com/Hyzoor/HospitalFlow.git
+git clone https://github.com/Hyzoor/HospitalFlow.git
 ```
 
 ### 2. Import the database
@@ -67,7 +67,7 @@ Option A: From your IDE (Eclipse, IntelliJ, NetBeans)
 
 Option B: From the console
 ```bash
-    java -jar HospitalFlow.jar
+java -jar HospitalFlow.jar
 ```
 
   📝 Make sure you have Java (JDK 8 or higher) and MySQL installed and properly configured on your system.
