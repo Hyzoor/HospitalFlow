@@ -3,6 +3,7 @@ package com.ejemplo.gestionhospital.view;
 import com.ejemplo.gestionhospital.exception.AccessDataException;
 import com.ejemplo.gestionhospital.model.Cama;
 import com.ejemplo.gestionhospital.model.Habitacion;
+import com.ejemplo.gestionhospital.model.Sesion;
 import com.ejemplo.gestionhospital.service.BedService;
 import com.ejemplo.gestionhospital.service.RoomService;
 
@@ -34,6 +35,8 @@ class BedsScreen extends JPanel {
         this.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentShown(ComponentEvent e) {
+                removeAll();
+                updatePanel();
                 showAllBeds();
             }
         });
@@ -114,20 +117,28 @@ class BedsScreen extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(BorderFactory.createEmptyBorder(20, 30, 20, 30));
 
+        backBtn = new JButton("⬅️ Atrás");
+        addBedBtn = new JButton("➕ Añadir Cama");
+
+    }
+
+    private void updatePanel() {
         area = new JTextArea();
         area.setFont(new Font("Monospaced", Font.PLAIN, 16));
         area.setEditable(false);
         add(new JScrollPane(area), BorderLayout.CENTER);
 
-
-        backBtn = new JButton("⬅️ Atrás");
-        addBedBtn = new JButton("➕ Añadir Cama");
-
-
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+
         bottomPanel.add(backBtn);
-        bottomPanel.add(addBedBtn);
+
+        if (Sesion.esAdmin()) {
+            bottomPanel.add(addBedBtn);
+        }
+
         add(bottomPanel, BorderLayout.SOUTH);
+        repaint();
+        revalidate();
     }
 
 }

@@ -48,13 +48,14 @@ class HomeScreen extends JPanel {
         add(title);
         add(Box.createRigidArea(new Dimension(0, 30)));
 
+
         if (Sesion.esAdmin()) {
             setButton(roomsBtn);
-            setButton(bedsBtn);
         } else {
             setButton(patientsBtn);
         }
 
+        setButton(bedsBtn);
         setButton(logoutBtn);
         repaint();
         revalidate();
